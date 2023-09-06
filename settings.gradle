@@ -14,3 +14,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Understanding MVVM"
 include ':app'
+include ':annotationprocessor'
+include ':annot'
+include ':annotate'
