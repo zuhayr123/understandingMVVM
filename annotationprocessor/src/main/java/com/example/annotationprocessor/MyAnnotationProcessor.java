@@ -39,10 +39,11 @@ public class MyAnnotationProcessor extends AbstractProcessor {
 
     private void generateClass(String className) {
         try {
+            String relativeClassName = "com.example.understandingmvvm."+className;
             mProcessingEnvironment.getMessager().printMessage(Diagnostic.Kind.NOTE, "Generate class called ******");
-            JavaFileObject jfo = mProcessingEnvironment.getFiler().createSourceFile(className);
+            JavaFileObject jfo = mProcessingEnvironment.getFiler().createSourceFile(relativeClassName);
             try (Writer writer = jfo.openWriter()) {
-                writer.write("package com.example.annotationprocessor;\n\n");
+                writer.write("package com.example.understandingmvvm;\n\n");
                 writer.write("public class " + className + " {\n\n");
                 writer.write("    public void print() {\n");
                 writer.write("        System.out.println(\"Hello from " + className + "!\");\n");
@@ -50,7 +51,7 @@ public class MyAnnotationProcessor extends AbstractProcessor {
                 writer.write("}\n");
             }
         } catch (Exception e) {
-            mProcessingEnvironment.getMessager().printMessage(Diagnostic.Kind.NOTE, "Unable to write ******");
+            mProcessingEnvironment.getMessager().printMessage(Diagnostic.Kind.NOTE, "Unable to write ******" + e.getMessage());
             e.printStackTrace();
         }
     }

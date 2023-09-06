@@ -2,6 +2,6 @@ package com.example.understandingmvvm;
 
 import com.example.annotate.GenerateClass;
 
-@GenerateClass(name = "MyGeneratedClass")
+@GenerateClass(name = "MyGeneratedClassTenth")
 public class TestClass {
 }
