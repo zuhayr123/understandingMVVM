@@ -8,6 +8,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var generated = MyGeneratedClassTenth()
+        var builderClassBuilder = BuilderClassBuilder().setAge(10).setName("Test").build()
+
+//        var generated = MyGeneratedClassTenth()
     }
 }
