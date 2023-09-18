@@ -7,6 +7,9 @@ import com.example.understandingmvvm.di.DaggerAppComponent
 import com.example.understandingmvvm.mock.UserDAO
 import com.example.understandingmvvm.mock.UserData
 import dagger.android.support.DaggerAppCompatActivity
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MainActivity : DaggerAppCompatActivity() {
@@ -27,7 +30,9 @@ class MainActivity : DaggerAppCompatActivity() {
             data.password = "test password"
             data.uid = "12312"
 
-            userDAO.insertUsers(userData = data)
+            CoroutineScope(Dispatchers.IO).launch {
+                userDAO.insertUsers(userData = data)
+            }
         }
     }
 }
