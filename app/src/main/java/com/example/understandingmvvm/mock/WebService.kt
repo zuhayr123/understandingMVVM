@@ -5,6 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface WebService {
-    @GET("user")
+    @GET("users")
     fun fetchAllUsers(): Call<ResponseBody>
 }

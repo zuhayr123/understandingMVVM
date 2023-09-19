@@ -51,6 +51,7 @@ class DatabaseModule {
     }
 
     @Provides
+    @Singleton
     fun provideRetrofit(gson: Gson, okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create(gson))
