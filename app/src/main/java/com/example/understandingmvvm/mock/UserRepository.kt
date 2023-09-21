@@ -7,8 +7,9 @@ import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class UserRepository constructor(val webService: WebService, val userDAO: UserDAO) {
+class UserRepository @Inject constructor(val webService: WebService, val userDAO: UserDAO) {
     private val _userDataResponse = MutableLiveData<UserDataResponse>()
     val userDataResponse: LiveData<UserDataResponse> get() = _userDataResponse
 
