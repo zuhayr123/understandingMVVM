@@ -3,6 +3,7 @@ package com.example.understandingmvvm
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import androidx.lifecycle.Observer
 import com.example.understandingmvvm.mock.UserDAO
 import com.example.understandingmvvm.mock.UserData
 import com.example.understandingmvvm.mock.UserDataResponse
@@ -33,6 +34,10 @@ class MainActivity : DaggerAppCompatActivity() {
         insertButton.setOnClickListener {
             fetchUserDataList()
         }
+
+        userRepository.userDataResponse.observe(this, Observer {
+            Log.e("Observed", "Some data received in observer ${Gson().toJson(it)}")
+        })
     }
 
     fun storeDataExample(){
