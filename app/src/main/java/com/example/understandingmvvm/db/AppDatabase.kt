@@ -5,7 +5,7 @@ import androidx.room.RoomDatabase
 import com.example.understandingmvvm.mock.UserDAO
 import com.example.understandingmvvm.mock.UserData
 
-@Database(entities = [UserData::class], version = 1, exportSchema = false)
+@Database(entities = [UserData::class], version = 2, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDAO(): UserDAO
 }
