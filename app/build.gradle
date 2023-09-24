@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.example.understandingmvvm'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.understandingmvvm"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
@@ -66,4 +66,13 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
+
+    //navigation fragment
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.7.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.7.2'
+
+    //viewmodels
+    def lifecycle_version = "2.6.2"  // check for the latest version
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 }
