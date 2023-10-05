@@ -1,11 +1,11 @@
 package com.example.understandingmvvm.di.modules
 
-import com.example.understandingmvvm.SignupFragment
+import com.example.understandingmvvm.SignUpFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class FragmentModule {
     @ContributesAndroidInjector
-    abstract fun contributeMyFragment(): SignupFragment
+    abstract fun contributeMyFragment(): SignUpFragment
 }

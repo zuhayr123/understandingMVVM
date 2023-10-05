@@ -1,5 +1,6 @@
 package com.example.understandingmvvm.di.modules
 
+import com.example.understandingmvvm.AuthenticationActivity
 import com.example.understandingmvvm.MainActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -8,4 +9,7 @@ import dagger.android.ContributesAndroidInjector
 abstract class AppModule {
     @ContributesAndroidInjector
     abstract fun contributeMainActivity(): MainActivity
+
+    @ContributesAndroidInjector
+    abstract fun contributeAuthenticationActivity(): AuthenticationActivity
 }
